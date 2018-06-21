@@ -17,10 +17,21 @@ public class Producto {
     private int cantidad;
     private String tipo;
     public boolean disponibilidad;
+    public int disponibilidad1;
+    
 
     public Producto() {
     }
-
+    public Producto(int id, String nombre, String codigo, String tipo, int cantidad, double precio, int disponibilidad1) {
+        this.id = id;
+        this.codigo = codigo;
+        this.precio = precio;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.tipo = tipo;
+        this.disponibilidad = disponibilidad;
+    }
+    
     public Producto(int id, String codigo, double precio, String nombre, int cantidad, String tipo, boolean disponibilidad) {
         this.id = id;
         this.codigo = codigo;

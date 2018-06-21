@@ -122,7 +122,7 @@ public class ProductoDao implements metodos<Producto> {
         }
         return f;
     }
-
+    
     @Override
     public ArrayList<Producto> readAll() {
         ArrayList<Producto> all=new ArrayList();

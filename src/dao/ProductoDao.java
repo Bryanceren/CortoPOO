@@ -27,8 +27,8 @@ import modelo.Producto;
  */
 public class ProductoDao implements metodos<Producto> {
 
-  private static final String SQL_INSERT = "INSER INTO productos (codigo,precio,nombre,cantidad,tipo,disponibilidad) VALUES (?,?,?)";
-  private static final String SQL_UPDATE = "UPDATE productos SET precio=?, nombre=?,cantidad=?,tipo=?,disponibilidad=?; WHERE codigo=?";
+  private static final String SQL_INSERT = "INSERT INTO productos (codigo,precio,nombre,cantidad,tipo,disponibilidad) VALUES (?,?,?,?,?,?)";
+  private static final String SQL_UPDATE = "UPDATE productos SET precio=?, nombre=?,cantidad=?,tipo=?,disponibilidad=? WHERE codigo=?";
   private static final String SQL_DELETE = "DELETE FROM productos WHERE codigo=?";
   private static final String SQL_READ= "SELECT * FROM productos WHERE codigo=?";
   private static final String SQL_READALL ="SELECT *FROM productos"; 
@@ -44,8 +44,9 @@ public class ProductoDao implements metodos<Producto> {
             ps.setDouble(2,g.getPrecio());
             ps.setString(3,g.getNombre());
             ps.setInt(4,g.getCantidad());
-            ps.setString(5,g.getTipo());
-            ps.setBoolean(6,g.getDisponibilidad());
+            ps.setString(5,g.getTipo());           
+            ps.setBoolean(6, true);        
+            //ps.setBoolean(6,g.getDisponibilidad());
             if (ps.executeUpdate()>0){
                 return true;
             }
@@ -87,7 +88,8 @@ public class ProductoDao implements metodos<Producto> {
             ps.setString(2,c.getNombre());
             ps.setInt(3,c.getCantidad());
             ps.setString(4, c.getTipo());
-            ps.setBoolean(5,c.getDisponibilidad());
+            ps.setBoolean(5, c.getDisponibilidad());
+            ps.setString(6,c.getCodigo());
             if (ps.executeUpdate() > 0){
                 return true;
             }

@@ -29,7 +29,7 @@ public class Producto {
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.tipo = tipo;
-        this.disponibilidad = disponibilidad;
+        this.disponibilidad1 = disponibilidad1;
     }
     
     public Producto(int id, String codigo, double precio, String nombre, int cantidad, String tipo, boolean disponibilidad) {

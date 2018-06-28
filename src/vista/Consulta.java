@@ -71,13 +71,14 @@ public class Consulta extends JFrame {
         container.add(cantidad);
         container.add(si);
         container.add(no);
+        container.add(tipo);
         container.add(buscar);
         container.add(insertar);
         container.add(actualizar);
         container.add(eliminar);
         container.add(limpiar);
         container.add(table);
-        setSize(800, 800);
+        setSize(950, 800);
         eventos();
     }
 
